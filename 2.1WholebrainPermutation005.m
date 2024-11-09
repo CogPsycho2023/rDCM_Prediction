@@ -10,12 +10,12 @@ NUM_RUNS = 500; % Repeating runs
 num_samples = size(all_behav, 1);
 lambda_values = logspace(-8,1,300);% Lambda values for ridge regression
 % Define threshold values to loop over
-thresholds = [0.05];
+thresholds = [0.05, 0.1, 0.2];
 % Loop over each threshold
 for thresh = thresholds
 % Initialize output variables
 for run = 1:NUM_RUNS
-rng(run)
+rng(run);
 Steps = 1;
 shuffled_behav = CTQ(randperm(num_samples));
 for lambda = lambda_values
