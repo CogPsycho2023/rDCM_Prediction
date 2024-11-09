@@ -20,7 +20,7 @@ for thresh = thresh_values
     for run = 1:NUM_RUNS
         Steps = 1;
         for lambda = lambda_values
-            rng(run);
+            rng(run); %control random seed for each lambda, then each lambda will face the same k-splits%
             [Correlation, MAE, sum_mask_all] = run_TaskFC_Ridge(all_behav, all_mats, k, thresh_type, thresh, lambda);
             Repeated_Correlation(Steps,1) = mean(Correlation);
             Repeated_MAE(Steps,1) = mean(MAE);
