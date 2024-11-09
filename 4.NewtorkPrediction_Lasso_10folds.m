@@ -9,7 +9,7 @@ thresh_values = [0.05];
 % Loop over different thresholds
 for thresh = thresh_values
     % Loop over the 7 networks
-    for Network = 1:7
+    for Network = 1:7;
         all_mats = within_network_submatrices{Network,1};
         all_behav = CTQ;
         k = 10;
@@ -23,7 +23,7 @@ for thresh = thresh_values
             Steps = 1;
             for lambda = lambda_values
                 rng(run); %Control random seeds here! Important!%
-                [Correlation, MAE, sum_mask_all] = run_TaskFC_Lasso(all_behav, all_mats, k, thresh_type, thresh, lambda);
+                [Correlation, MAE, sum_mask_all] = run_EC_Lasso(all_behav, all_mats, k, thresh_type, thresh, lambda);
                 Repeated_Correlation(Steps,1) = mean(Correlation);
                 Repeated_MAE(Steps,1) = mean(MAE);
                 Repeated_lambda(Steps,1) = lambda;
