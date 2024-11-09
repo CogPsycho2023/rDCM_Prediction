@@ -6,12 +6,12 @@ load('EC_networks.mat');  % Network submatrices
 load('CTQ.mat');  % Behavioral data
 
 % Define thresholds to loop over
-thresholds = [0.05];  % Include multiple thresholds
+thresholds = [0.05, 0.1, 0.2];  % Include multiple thresholds
 
 % Loop over each threshold
 for thresh = thresholds
     % Loop over each network (1 to 7)
-    for Network = 7;
+    for Network = 1:7;
         all_mats = within_network_submatrices{Network, 1};  % Extract network submatrix
         all_behav = CTQ;  % Use CTQ as behavioral data
         k = 10;  % Number of folds for cross-validation
