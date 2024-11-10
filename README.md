@@ -15,3 +15,6 @@ Our previous scritp didn't control the random seeds well, where rng(seed) was pe
 2.1WholebrainPermutation.m and 4.1NetworkPermutation.m scripts for permutation tests.
 run_EC_Ridge/Lasso.m for predictions with different models.
 
+# The current study included a Schaefer-based atlas (100-parcellation, 7 networks)
+The Parcellation_labels.txt records the network, which refers to (https://github.com/ThomasYeoLab/CBIG/blob/master/stable_projects/brain_parcellation/Schaefer2018_LocalGlobal/Parcellations)
+
